@@ -29,7 +29,8 @@ def run_machina():
   command = take_command()
   print(command)
   if 'play' in command:
-    talk('playing...')
-    print('playing...')
+    song = command.replace('play', '')
+    talk('playing...' + song)
+    print(song)
 
 run_machina()
