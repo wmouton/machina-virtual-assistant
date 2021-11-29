@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
+import pywhatkit
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -31,6 +32,6 @@ def run_machina():
   if 'play' in command:
     song = command.replace('play', '')
     talk('playing...' + song)
-    print(song)
+    pywhatkit.playonyt(song)
 
 run_machina()
