@@ -5,9 +5,11 @@ listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', 'english_rp+f3')
-engine.say('Hello, I am Machina, your personal virtual assistant.')
-engine.say('What can I do for you?.')
-engine.runAndWait()
+
+def talk(text):
+  engine.say(text)
+  engine.runAndWait()
+
 try:
   with sr.Microphone() as source:
     print('listening...')
@@ -15,8 +17,7 @@ try:
     command = listener.recognize_google(voice)
     command = command.lowser()
     if 'Machina' in command:
-
-      print(command)
+      talk(command)
 
 except:
     pass
